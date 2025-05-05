@@ -1,0 +1,327 @@
+[
+    {
+      "model": "restaurants.restaurant",
+      "pk": 1,
+      "fields": {
+        "name": "Cafe Central",
+        "address": "123 Main St, New York",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "description": "A cozy place with great coffee",
+        "image_url": "",
+        "created_at": "2025-04-05T10:00:00Z"
+      }
+    },
+    {
+      "model": "restaurants.restaurant",
+      "pk": 2,
+      "fields": {
+        "name": "Burger Hub",
+        "address": "456 Oak Ave, Chicago",
+        "latitude": 41.8781,
+        "longitude": -87.6298,
+        "description": "Best burgers in town",
+        "image_url": "",
+        "created_at": "2025-04-05T10:00:00Z"
+      }
+    },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 3,
+    "fields": {
+      "name": "Pasta Palace",
+      "address": "789 Pine St, San Francisco",
+      "latitude": 37.7749,
+      "longitude": -122.4194,
+      "description": "Authentic Italian pasta dishes",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 4,
+    "fields": {
+      "name": "Sushi World",
+      "address": "101 Maple Rd, Seattle",
+      "latitude": 47.6062,
+      "longitude": -122.3321,
+      "description": "Fresh sushi and sashimi",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 5,
+    "fields": {
+      "name": "Taco Town",
+      "address": "202 Birch Blvd, Austin",
+      "latitude": 30.2672,
+      "longitude": -97.7431,
+      "description": "Delicious tacos and burritos",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 6,
+    "fields": {
+      "name": "Pizza Place",
+      "address": "303 Cedar St, Boston",
+      "latitude": 42.3601,
+      "longitude": -71.0589,
+      "description": "Best pizza in the city",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 7,
+    "fields": {
+      "name": "Dessert Delight",
+      "address": "404 Elm St, Miami",
+      "latitude": 25.7617,
+      "longitude": -80.1918,
+      "description": "Sweet treats and desserts",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 8,
+    "fields": {
+      "name": "BBQ Haven",
+      "address": "505 Spruce St, Nashville",
+      "latitude": 36.1627,
+      "longitude": -86.7816,
+      "description": "Smoky BBQ and ribs",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 9,
+    "fields": {
+      "name": "Vegan Paradise",
+      "address": "606 Willow St, Portland",
+      "latitude": 45.5155,
+      "longitude": -122.6793,
+      "description": "Healthy vegan options",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 10,
+    "fields": {
+      "name": "Steakhouse Supreme",
+      "address": "707 Fir St, Denver",
+      "latitude": 39.7392,
+      "longitude": -104.9903,
+      "description": "Premium steaks and wines",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 11,
+    "fields": {
+      "name": "Indian Spice",
+      "address": "808 Ash St, San Diego",
+      "latitude": 32.7157,
+      "longitude": -117.1611,
+      "description": "Authentic Indian cuisine",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 12,
+    "fields": {
+      "name": "Mediterranean Grill",
+      "address": "909 Palm St, Orlando",
+      "latitude": 28.5383,
+      "longitude": -81.3792,
+      "description": "Delicious Mediterranean dishes",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 13,
+    "fields": {
+      "name": "Chinese Express",
+      "address": "1110 Oak St, Atlanta",
+      "latitude": 33.7490,
+      "longitude": -84.3880,
+      "description": "Quick and tasty Chinese food",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 14,
+    "fields": {
+      "name": "French Bistro",
+      "address": "1211 Birch St, Philadelphia",
+      "latitude": 39.9526,
+      "longitude": -75.1652,
+      "description": "Charming French cuisine",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 15,
+    "fields": {
+      "name": "Thai Kitchen",
+      "address": "1312 Maple St, Houston",
+      "latitude": 29.7604,
+      "longitude": -95.3698,
+      "description": "Spicy and flavorful Thai dishes",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 16,
+    "fields": {
+      "name": "Greek Taverna",
+      "address": "1413 Cedar St, Phoenix",
+      "latitude": 33.4484,
+      "longitude": -112.0740,
+      "description": "Traditional Greek food",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 17,
+    "fields": {
+      "name": "Korean BBQ",
+      "address": "1514 Elm St, Dallas",
+      "latitude": 32.7767,
+      "longitude": -96.7970,
+      "description": "Grill your own meat at the table",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 18,
+    "fields": {
+      "name": "Spanish Tapas",
+      "address": "1615 Pine St, San Jose",
+      "latitude": 37.3382,
+      "longitude": -121.8863,
+      "description": "Small plates of Spanish cuisine",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 19,
+    "fields": {
+      "name": "Brazilian Steakhouse",
+      "address": "1716 Oak St, San Antonio",
+      "latitude": 29.4241,
+      "longitude": -98.4936,
+      "description": "All-you-can-eat grilled meats",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 20,
+    "fields": {
+      "name": "Vietnamese Pho",
+      "address": "1817 Birch St, Charlotte",
+      "latitude": 35.2271,
+      "longitude": -80.8431,
+      "description": "Delicious pho and banh mi",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 21,
+    "fields": {
+      "name": "Middle Eastern Grill",
+      "address": "1918 Maple St, Detroit",
+      "latitude": 42.3314,
+      "longitude": -83.0458,
+      "description": "Grilled meats and fresh salads",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 22,
+    "fields": {
+      "name": "Soul Food Kitchen",
+      "address": "2020 Cedar St, Baltimore",
+      "latitude": 39.2904,
+      "longitude": -76.6122,
+      "description": "Comfort food from the South",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 23,
+    "fields": {
+      "name": "Cajun Seafood",
+      "address": "2121 Elm St, New Orleans",
+      "latitude": 29.9511,
+      "longitude": -90.0715,
+      "description": "Spicy seafood dishes",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 24,
+    "fields": {
+      "name": "Irish Pub",
+      "address": "2222 Pine St, Boston",
+      "latitude": 42.3601,
+      "longitude": -71.0589,
+      "description": "Traditional Irish food and drinks",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 25,
+    "fields": {
+      "name": "Russian Diner",
+      "address": "2323 Oak St, Seattle",
+      "latitude": 47.6062,
+      "longitude": -122.3321,
+      "description": "Authentic Russian cuisine",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  }
+]
