@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/login_cubit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,6 +23,12 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  Future<void> _storeAuthTokens(String accessToken, String refreshToken) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('access_token', accessToken);
+    await prefs.setString('refresh_token', refreshToken);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,14 +36,21 @@ class _LoginScreenState extends State<LoginScreen> {
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
+            // Store tokens securely
+            _storeAuthTokens(state.accessToken, state.refreshToken);
+
+            // Show success message and navigate
             ScaffoldMessenger.of(
               context,
-            ).showSnackBar(SnackBar(content: Text('Welcome ${state.name}!')));
-            // Navigate to the main app screen
+            ).showSnackBar(const SnackBar(content: Text('Login successful!')));
+
+            // Navigate to restaurants screen
+            Navigator.pushNamed(context, '/restaurants');
           } else if (state is LoginFailure) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(SnackBar(content: Text('Error: ${state.error}')));
+            // Show error message
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Login failed: ${state.error}')),
+            );
           }
         },
         builder: (context, state) {
@@ -49,17 +63,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     controller: emailController,
                     decoration: const InputDecoration(labelText: 'Email'),
-                    validator:
-                        (value) => value!.isEmpty ? 'Please enter email' : null,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please enter email';
+                      }
+                      // Email validation regex
+                      final bool isValid = RegExp(
+                        r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                      ).hasMatch(value);
+                      if (!isValid) {
+                        return 'Please enter a valid email';
+                      }
+                      return null;
+                    },
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: passwordController,
                     decoration: const InputDecoration(labelText: 'Password'),
                     obscureText: true,
-                    validator:
-                        (value) =>
-                            value!.isEmpty ? 'Please enter password' : null,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please enter password';
+                      }
+                      if (value.length < 8) {
+                        return 'Password must be at least 8 characters';
+                      }
+                      return null;
+                    },
                   ),
                   const SizedBox(height: 24),
                   state is LoginLoading
@@ -71,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 12),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'register');
+                      Navigator.pushNamed(context, '/register');
                     },
                     child: const Text('Don’t have an account? Register'),
                   ),
