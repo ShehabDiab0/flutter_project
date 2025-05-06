@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 import '../../../data/repository/auth_repository.dart';
 
 part 'login_state.dart';
