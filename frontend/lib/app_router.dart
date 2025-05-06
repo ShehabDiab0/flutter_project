@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/constants/strings.dart';
-import 'package:frontend/presentation/screens/login_screen.dart';
-import 'package:frontend/presentation/screens/register_screen.dart';
-import 'package:frontend/presentation/screens/restaurant_details_screen.dart';
-import 'package:frontend/presentation/screens/restaurants_screen.dart';
+import 'package:frontend/screens/register_screen.dart';
+import 'package:frontend/screens/restaurant_details_screen.dart';
+import 'package:frontend/screens/restaurants_screen.dart';
+import 'package:frontend/screens/login_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
