@@ -30,7 +30,7 @@ class RestaurantApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: appRouter.generateRoute,
-      initialRoute: 'login',
+      initialRoute: '/login',
     );
   }
 }

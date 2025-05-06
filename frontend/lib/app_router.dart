@@ -8,7 +8,7 @@ import 'package:frontend/screens/login_screen.dart';
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case restaurantsScreen:
+      case '/restaurants':
         return MaterialPageRoute(builder: (_) => const RestaurantScreen());
 
       case restaurantDetailScreen:
@@ -16,10 +16,10 @@ class AppRouter {
           builder: (_) => const RestaurantDetailsScreen(),
         );
 
-      case 'login':
+      case '/login':
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
-      case 'register':
+      case '/register':
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
 
       default:
