@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:frontend/constants/strings.dart';
+import 'token_manager.dart';
 
 class RestaurantsWebServices {
-  // This class will contain methods to interact with the restaurant API
-  // For example, fetching a list of restaurants, getting details of a specific restaurant, etc.
   late Dio _dio;
+  final TokenManager tokenManager = TokenManager();
 
-  RestaurantsWebservices() {
+  RestaurantsWebServices() {
     BaseOptions options = BaseOptions(
       baseUrl: baseURL,
       receiveDataWhenStatusError: true,
@@ -15,6 +15,18 @@ class RestaurantsWebServices {
     );
 
     _dio = Dio(options);
+
+    _dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          final accessToken = await tokenManager.getAccessToken();
+          if (accessToken != null) {
+            options.headers['Authorization'] = 'Bearer $accessToken';
+          }
+          return handler.next(options); // continue
+        },
+      ),
+    );
   }
 
   Future<List<dynamic>> getAllRestaurants() async {
