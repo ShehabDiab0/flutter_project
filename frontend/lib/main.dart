@@ -6,6 +6,7 @@ import 'package:frontend/business_logic/cubit/register_cubit.dart';
 import 'package:frontend/data/repository/auth_repository.dart';
 import 'package:frontend/data/web_services/auth_web_services.dart';
 
+// TODO: Handle back button in login and register screens
 void main() {
   final authRepo = AuthRepository(AuthWebServices());
 
