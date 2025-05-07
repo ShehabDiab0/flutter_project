@@ -1,4 +1,5 @@
 class Restaurant {
+  final int id; // Assuming this is the unique identifier for the restaurant
   final String name;
   final String address;
   final double latitude;
@@ -8,6 +9,7 @@ class Restaurant {
   final DateTime createdAt;
 
   Restaurant({
+    required this.id,
     required this.name,
     required this.address,
     required this.latitude,
@@ -19,6 +21,7 @@ class Restaurant {
 
   factory Restaurant.fromJson(Map<String, dynamic> json) {
     return Restaurant(
+      id: json['id'],
       name: json['name'],
       address: json['address'],
       latitude: json['latitude'],
@@ -31,6 +34,7 @@ class Restaurant {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'address': address,
       'latitude': latitude,
