@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/restaurants_cubit.dart';
 import 'package:frontend/data/models/restaurant.dart';
 
+// TODO: add search by product functionality
+// TODO: add MapView in the search by product
 class RestaurantsScreen extends StatefulWidget {
   const RestaurantsScreen({Key? key}) : super(key: key);
 
@@ -45,7 +47,7 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
                   final restaurant = restaurants[index];
                   return ListTile(
                     onTap: () {
-                      // Navigate to restaurant detail screen
+                      // print('Restaurant tapped: ${restaurant.id}');
                       Navigator.pushNamed(
                         context,
                         '/restaurant_detail',
