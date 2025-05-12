@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         'gender': _gender,
         'level': _level?.toString(),
       };
-      print(data);
+      // print(data);
       BlocProvider.of<RegisterCubit>(context).register(data);
     }
   }

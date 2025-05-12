@@ -8,6 +8,10 @@ class ProductsRepository {
 
   Future<List<Product>> getProductsByRestaurantId(int restaurantId) async {
     final response = await productsWebServices.fetchProducts(restaurantId);
-    return (response).map((item) => Product.fromJson(item)).toList();
+
+    // Use Future.wait to resolve the list of Future<Product>
+    return await Future.wait(
+      response.map((item) async => Product.fromJson(item)),
+    );
   }
 }

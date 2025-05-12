@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/login_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//TODO: Use JWT tockens so that we can keep the user logged in
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 

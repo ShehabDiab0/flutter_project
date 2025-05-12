@@ -1,4 +1,4 @@
-final baseURL = 'http://10.0.2.2:8000/';
+final baseURL = 'http://192.168.1.21:8000/';
 final registerURL = 'accounts/register/';
 final loginURL = 'accounts/login/';
 final restaurantsURL = 'restaurants/';
