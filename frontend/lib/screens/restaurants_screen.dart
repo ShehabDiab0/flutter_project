@@ -65,17 +65,17 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Restaurants'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.map),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MapViewScreen()),
-              );
-            },
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.map),
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(builder: (context) => const MapViewScreen()),
+        //       );
+        //     },
+        //   ),
+        // ],
       ),
       body: Column(
         children: [

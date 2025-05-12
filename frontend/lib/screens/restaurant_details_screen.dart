@@ -5,6 +5,7 @@ import 'package:frontend/data/repository/products_repository.dart';
 import 'package:frontend/data/web_services/products_web_services.dart';
 import 'package:frontend/data/models/restaurant.dart';
 import 'package:frontend/data/models/product.dart';
+import 'package:frontend/screens/map_view_screen.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   final Restaurant restaurant;
@@ -22,7 +23,26 @@ class RestaurantDetailsScreen extends StatelessWidget {
             ),
           )..fetchProducts(restaurant.id),
       child: Scaffold(
-        appBar: AppBar(title: Text(restaurant.name)),
+        appBar: AppBar(
+          title: Text(restaurant.name),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => MapViewScreen(
+                          restaurantLatitude: restaurant.latitude,
+                          restaurantLongitude: restaurant.longitude,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
         body: BlocBuilder<ProductCubit, ProductState>(
           builder: (context, state) {
             if (state is ProductsLoading) {

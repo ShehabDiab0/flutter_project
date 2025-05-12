@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapViewScreen extends StatelessWidget {
-  const MapViewScreen({Key? key}) : super(key: key);
+  final double restaurantLatitude;
+  final double restaurantLongitude;
 
-  // Replace these with the restaurant's latitude and longitude
-  final double restaurantLatitude = 37.7749; // Example: San Francisco latitude
-  final double restaurantLongitude =
-      -122.4194; // Example: San Francisco longitude
+  const MapViewScreen({
+    super.key,
+    required this.restaurantLatitude,
+    required this.restaurantLongitude,
+  });
 
   @override
   Widget build(BuildContext context) {
