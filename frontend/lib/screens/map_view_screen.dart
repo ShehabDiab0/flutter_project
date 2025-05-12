@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MapViewScreen extends StatelessWidget {
-  const MapViewScreen({Key? key}) : super(key: key);
+  final double restaurantLatitude;
+  final double restaurantLongitude;
+
+  const MapViewScreen({
+    super.key,
+    required this.restaurantLatitude,
+    required this.restaurantLongitude,
+  });
 
   @override
   Widget build(BuildContext context) {
