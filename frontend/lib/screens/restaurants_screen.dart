@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/restaurants_cubit.dart';
 import 'package:frontend/data/models/restaurant.dart';
 import 'package:frontend/screens/map_view_screen.dart'; // Import for MapView screen
+import 'package:frontend/screens/login_screen.dart'; // Import for LoginScreen
 import 'package:frontend/data/repository/products_repository.dart';
 import 'package:frontend/data/web_services/products_web_services.dart';
 import 'package:frontend/data/models/product.dart';
-// TODO: add search by product functionality
-// TODO: add MapView in the search by product
+import 'package:google_maps_flutter/google_maps_flutter.dart'; // Import LatLng class
+import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 
 final ProductsWebServices productsWebServices =
     ProductsWebServices(); // Initialize your web service
@@ -51,6 +52,7 @@ Future<List<Restaurant>> filterRestaurantsByProduct(
 
 class RestaurantsScreenState extends State<RestaurantsScreen> {
   String searchQuery = ''; // For search functionality
+  late Future<List<Restaurant>> filteredRestaurants; // List of restaurants
 
   @override
   void initState() {
@@ -62,139 +64,182 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Restaurants'),
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.map),
-        //     onPressed: () {
-        //       Navigator.push(
-        //         context,
-        //         MaterialPageRoute(builder: (context) => const MapViewScreen()),
-        //       );
-        //     },
-        //   ),
-        // ],
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: const InputDecoration(
-                labelText: 'Search by product',
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(),
+    return PopScope(
+      canPop: false,
+
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Restaurants'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () async {
+                final restaurants = await filteredRestaurants;
+                final restaurantLocations =
+                    restaurants
+                        .map(
+                          (restaurant) =>
+                              LatLng(restaurant.latitude, restaurant.longitude),
+                        )
+                        .toList();
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => MapViewScreen(
+                          restaurantLocations: restaurantLocations,
+                        ),
+                  ),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () async {
+                // Clear the stored tokens
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.remove('access_token');
+
+                await prefs.remove('refresh_token');
+                // Navigate to the login screen
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  (route) => false,
+                );
+              },
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: const InputDecoration(
+                  labelText: 'Search by product',
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    searchQuery = value.toLowerCase();
+                  });
+                },
               ),
-              onChanged: (value) {
-                setState(() {
-                  searchQuery = value.toLowerCase();
-                });
-              },
             ),
-          ),
-          Expanded(
-            child: BlocBuilder<RestaurantsCubit, RestaurantsState>(
-              builder: (context, state) {
-                if (state is RestaurantsInitial) {
-                  return const Center(
-                    child: Text('Load restaurants by pulling down.'),
-                  );
-                } else if (state is RestaurantsLoaded) {
-                  // Use FutureBuilder to handle the Future<List<Restaurant>>
-                  return FutureBuilder<List<Restaurant>>(
-                    future: filterRestaurantsByProduct(
-                      state.restaurants.whereType<Restaurant>().toList(),
-                      searchQuery,
-                    ),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Center(child: CircularProgressIndicator());
-                      } else if (snapshot.hasError) {
-                        return Center(child: Text('Error: ${snapshot.error}'));
-                      } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                        return const Center(
-                          child: Text('No restaurants found.'),
-                        );
-                      } else {
-                        final restaurants = snapshot.data!;
-                        return RefreshIndicator(
-                          onRefresh:
-                              () =>
-                                  context
-                                      .read<RestaurantsCubit>()
-                                      .getAllRestaurants(),
-                          child: ListView.separated(
-                            itemCount: restaurants.length,
-                            separatorBuilder:
-                                (_, __) => const Divider(height: 1),
-                            itemBuilder: (context, index) {
-                              final restaurant = restaurants[index];
-                              return ListTile(
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/restaurant_detail',
-                                    arguments: restaurant,
-                                  );
-                                },
-                                leading:
-                                    restaurant.imageUrl != null
-                                        ? CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                            restaurant.imageUrl!,
-                                          ),
-                                        )
-                                        : const Icon(Icons.restaurant),
-                                title: Text(restaurant.name),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(restaurant.address),
-                                    if (restaurant.description != null)
-                                      Text(
-                                        restaurant.description!,
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                  ],
-                                ),
-                                trailing: const Icon(Icons.chevron_right),
-                              );
-                            },
+            Expanded(
+              child: BlocBuilder<RestaurantsCubit, RestaurantsState>(
+                builder: (context, state) {
+                  if (state is RestaurantsInitial) {
+                    return const Center(
+                      child: Text('Load restaurants by pulling down.'),
+                    );
+                  } else if (state is RestaurantsLoaded) {
+                    // Use FutureBuilder to handle the Future<List<Restaurant>>
+                    return FutureBuilder<List<Restaurant>>(
+                      future:
+                          filteredRestaurants = filterRestaurantsByProduct(
+                            state.restaurants.whereType<Restaurant>().toList(),
+                            searchQuery,
                           ),
-                        );
-                      }
-                    },
-                  );
-                } else if (state is RestaurantsError) {
-                  return Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Error loading restaurants: ${state.errorMessage}',
-                        ),
-                        const SizedBox(height: 16),
-                        ElevatedButton(
-                          onPressed:
-                              () =>
-                                  context
-                                      .read<RestaurantsCubit>()
-                                      .getAllRestaurants(),
-                          child: const Text('Try Again'),
-                        ),
-                      ],
-                    ),
-                  );
-                } else {
-                  return const Center(child: CircularProgressIndicator());
-                }
-              },
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Center(
+                            child: Text('Error: ${snapshot.error}'),
+                          );
+                        } else if (!snapshot.hasData ||
+                            snapshot.data!.isEmpty) {
+                          return const Center(
+                            child: Text('No restaurants found.'),
+                          );
+                        } else {
+                          final restaurants = snapshot.data!;
+                          return RefreshIndicator(
+                            onRefresh:
+                                () =>
+                                    context
+                                        .read<RestaurantsCubit>()
+                                        .getAllRestaurants(),
+                            child: ListView.separated(
+                              itemCount: restaurants.length,
+                              separatorBuilder:
+                                  (_, __) => const Divider(height: 1),
+                              itemBuilder: (context, index) {
+                                final restaurant = restaurants[index];
+                                return ListTile(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/restaurant_detail',
+                                      arguments: restaurant,
+                                    );
+                                  },
+                                  leading:
+                                      restaurant.imageUrl != null
+                                          ? CircleAvatar(
+                                            backgroundImage: NetworkImage(
+                                              restaurant.imageUrl!,
+                                            ),
+                                          )
+                                          : const Icon(Icons.restaurant),
+                                  title: Text(restaurant.name),
+                                  subtitle: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(restaurant.address),
+                                      if (restaurant.description != null)
+                                        Text(
+                                          restaurant.description!,
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                    ],
+                                  ),
+                                  trailing: const Icon(Icons.chevron_right),
+                                );
+                              },
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  } else if (state is RestaurantsError) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Error loading restaurants: ${state.errorMessage}',
+                          ),
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed:
+                                () =>
+                                    context
+                                        .read<RestaurantsCubit>()
+                                        .getAllRestaurants(),
+                            child: const Text('Try Again'),
+                          ),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
