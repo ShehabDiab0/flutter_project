@@ -6,6 +6,7 @@ import 'package:frontend/data/web_services/products_web_services.dart';
 import 'package:frontend/data/models/restaurant.dart';
 import 'package:frontend/data/models/product.dart';
 import 'package:frontend/screens/map_view_screen.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   final Restaurant restaurant;
@@ -34,8 +35,9 @@ class RestaurantDetailsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder:
                         (context) => MapViewScreen(
-                          restaurantLatitude: restaurant.latitude,
-                          restaurantLongitude: restaurant.longitude,
+                          restaurantLocations: [
+                            LatLng(restaurant.latitude, restaurant.longitude),
+                          ],
                         ),
                   ),
                 );

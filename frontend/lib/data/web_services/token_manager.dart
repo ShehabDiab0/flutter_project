@@ -1,6 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:frontend/constants/strings.dart';
 
-// TODO: Handle token expiration and refresh logic
 class TokenManager {
   Future<String?> getAccessToken() async {
     final prefs = await SharedPreferences.getInstance();
@@ -26,5 +28,62 @@ class TokenManager {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('access_token');
     await prefs.remove('refresh_token');
+  }
+
+  // New method to check and refresh the access token
+  Future<String?> getValidAccessToken() async {
+    final accessToken = await getAccessToken();
+
+    if (accessToken != null && !isTokenExpired(accessToken)) {
+      return accessToken;
+    }
+
+    // If the token is expired, try to refresh it
+    final refreshToken = await getRefreshToken();
+    if (refreshToken != null) {
+      final newAccessToken = await refreshAccessToken(refreshToken);
+      if (newAccessToken != null) {
+        await saveAccessToken(newAccessToken);
+        return newAccessToken;
+      }
+    }
+
+    // If refreshing fails, clear tokens
+    await clearTokens();
+    return null;
+  }
+
+  // Helper method to check if a token is expired
+  bool isTokenExpired(String token) {
+    try {
+      final payload = json.decode(
+        utf8.decode(base64Url.decode(base64Url.normalize(token.split('.')[1]))),
+      );
+      final expiry = payload['exp'] * 1000; // Convert to milliseconds
+      return DateTime.now().millisecondsSinceEpoch > expiry;
+    } catch (e) {
+      return true; // Assume expired if parsing fails
+    }
+  }
+
+  // Helper method to refresh the access token
+  Future<String?> refreshAccessToken(String refreshToken) async {
+    try {
+      final response = await http.post(
+        Uri.parse(
+          'https://$baseURL/token/refresh',
+        ), // Replace with your API endpoint
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'refresh_token': refreshToken}),
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        return data['access_token'];
+      }
+    } catch (e) {
+      // Handle errors (e.g., log them)
+    }
+    return null;
   }
 }
