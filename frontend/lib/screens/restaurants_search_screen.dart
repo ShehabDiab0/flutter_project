@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/restaurants_cubit.dart';
+import 'package:frontend/constants/strings.dart';
 import 'package:frontend/data/models/restaurant.dart';
 import 'package:frontend/screens/map_view_screen.dart'; // Import for MapView screen
-import 'package:frontend/screens/login_screen.dart'; // Import for LoginScreen
 import 'package:frontend/data/repository/products_repository.dart';
 import 'package:frontend/data/web_services/products_web_services.dart';
-import 'package:frontend/data/models/product.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart'; // Import LatLng class
-import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 
 //TODO: add caching to restraunts.
 
@@ -19,11 +17,12 @@ final ProductsRepository productsRepository = ProductsRepository(
   productsWebServices: productsWebServices,
 );
 
-class RestaurantsScreen extends StatefulWidget {
-  const RestaurantsScreen({Key? key}) : super(key: key);
+class RestaurantsSearchScreen extends StatefulWidget {
+  const RestaurantsSearchScreen({super.key});
 
   @override
-  State<RestaurantsScreen> createState() => RestaurantsScreenState();
+  State<RestaurantsSearchScreen> createState() =>
+      RestaurantsSearchScreenState();
 }
 
 Future<List<Restaurant>> filterRestaurantsByProduct(
@@ -52,7 +51,7 @@ Future<List<Restaurant>> filterRestaurantsByProduct(
   return filteredRestaurants;
 }
 
-class RestaurantsScreenState extends State<RestaurantsScreen> {
+class RestaurantsSearchScreenState extends State<RestaurantsSearchScreen> {
   String searchQuery = ''; // For search functionality
   late Future<List<Restaurant>> filteredRestaurants; // List of restaurants
 
@@ -67,11 +66,8 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: false,
-
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
           title: const Text('Restaurants'),
           actions: [
             IconButton(
@@ -94,23 +90,6 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
                           restaurantLocations: restaurantLocations,
                         ),
                   ),
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.logout),
-              onPressed: () async {
-                // Clear the stored tokens
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.remove('access_token');
-
-                await prefs.remove('refresh_token');
-                // Navigate to the login screen
-
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                  (route) => false,
                 );
               },
             ),
@@ -181,7 +160,7 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
                                   onTap: () {
                                     Navigator.pushNamed(
                                       context,
-                                      '/restaurant_detail',
+                                      restaurantDetailScreen,
                                       arguments: restaurant,
                                     );
                                   },

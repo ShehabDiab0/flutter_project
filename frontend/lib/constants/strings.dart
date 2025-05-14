@@ -4,7 +4,8 @@ final loginURL = 'accounts/login/';
 final restaurantsURL = 'restaurants/';
 
 // Screens for app_router.dart
-const restaurantsScreen = '/';
+const homeScreen = '/';
+const restaurantsSearchScreen = '/restraunts';
 const restaurantDetailScreen = '/restaurant_details';
 const favoriteRestaurantsScreen = '/favorite_restaurants';
 const searchRestaurantsScreen = '/search_restaurants';

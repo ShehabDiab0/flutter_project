@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/business_logic/cubit/login_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:frontend/constants/strings.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -45,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ).showSnackBar(const SnackBar(content: Text('Login successful!')));
 
             // Navigate to restaurants screen
-            Navigator.pushNamed(context, '/restaurants');
+            Navigator.pushNamed(context, homeScreen);
           } else if (state is LoginFailure) {
             // Show error message
             ScaffoldMessenger.of(context).showSnackBar(
@@ -102,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 12),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/register');
+                      Navigator.pushNamed(context, registerScreen);
                     },
                     child: const Text('Don’t have an account? Register'),
                   ),
