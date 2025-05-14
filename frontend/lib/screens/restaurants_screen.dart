@@ -10,6 +10,8 @@ import 'package:frontend/data/models/product.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart'; // Import LatLng class
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 
+//TODO: add caching to restraunts.
+
 final ProductsWebServices productsWebServices =
     ProductsWebServices(); // Initialize your web service
 
@@ -69,6 +71,7 @@ class RestaurantsScreenState extends State<RestaurantsScreen> {
 
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const Text('Restaurants'),
           actions: [
             IconButton(

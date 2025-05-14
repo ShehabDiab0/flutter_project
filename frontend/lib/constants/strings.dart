@@ -9,3 +9,5 @@ const restaurantDetailScreen = '/restaurant_details';
 const favoriteRestaurantsScreen = '/favorite_restaurants';
 const searchRestaurantsScreen = '/search_restaurants';
 const productDetailsScreen = '/product_details';
+const loginScreen = '/login';
+const registerScreen = '/register';
