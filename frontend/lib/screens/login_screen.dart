@@ -32,86 +32,89 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
-      body: BlocConsumer<LoginCubit, LoginState>(
-        listener: (context, state) {
-          if (state is LoginSuccess) {
-            // Store tokens securely
-            _storeAuthTokens(state.accessToken, state.refreshToken);
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Login')),
+        body: BlocConsumer<LoginCubit, LoginState>(
+          listener: (context, state) {
+            if (state is LoginSuccess) {
+              // Store tokens securely
+              _storeAuthTokens(state.accessToken, state.refreshToken);
 
-            // Show success message and navigate
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(const SnackBar(content: Text('Login successful!')));
+              // Show success message and navigate
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Login successful!')),
+              );
 
-            // Navigate to restaurants screen
-            Navigator.pushNamed(context, homeScreen);
-          } else if (state is LoginFailure) {
-            // Show error message
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Login failed: ${state.error}')),
-            );
-          }
-        },
-        builder: (context, state) {
-          return Padding(
-            padding: const EdgeInsets.all(16),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: emailController,
-                    decoration: const InputDecoration(labelText: 'Email'),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter email';
-                      }
-                      // Email validation regex
-                      final bool isValid = RegExp(
-                        r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
-                      ).hasMatch(value);
-                      if (!isValid) {
-                        return 'Please enter a valid email';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  TextFormField(
-                    controller: passwordController,
-                    decoration: const InputDecoration(labelText: 'Password'),
-                    obscureText: true,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter password';
-                      }
-                      if (value.length < 8) {
-                        return 'Password must be at least 8 characters';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 24),
-                  state is LoginLoading
-                      ? const CircularProgressIndicator()
-                      : ElevatedButton(
-                        onPressed: _onLoginPressed,
-                        child: const Text('Login'),
-                      ),
-                  const SizedBox(height: 12),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, registerScreen);
-                    },
-                    child: const Text('Don’t have an account? Register'),
-                  ),
-                ],
+              // Navigate to restaurants screen
+              Navigator.pushNamed(context, homeScreen);
+            } else if (state is LoginFailure) {
+              // Show error message
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Login failed: ${state.error}')),
+              );
+            }
+          },
+          builder: (context, state) {
+            return Padding(
+              padding: const EdgeInsets.all(16),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: emailController,
+                      decoration: const InputDecoration(labelText: 'Email'),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter email';
+                        }
+                        // Email validation regex
+                        final bool isValid = RegExp(
+                          r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                        ).hasMatch(value);
+                        if (!isValid) {
+                          return 'Please enter a valid email';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: passwordController,
+                      decoration: const InputDecoration(labelText: 'Password'),
+                      obscureText: true,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter password';
+                        }
+                        if (value.length < 8) {
+                          return 'Password must be at least 8 characters';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 24),
+                    state is LoginLoading
+                        ? const CircularProgressIndicator()
+                        : ElevatedButton(
+                          onPressed: _onLoginPressed,
+                          child: const Text('Login'),
+                        ),
+                    const SizedBox(height: 12),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, registerScreen);
+                      },
+                      child: const Text('Don’t have an account? Register'),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

@@ -9,7 +9,6 @@ import 'package:frontend/data/web_services/products_web_services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart'; // Import LatLng class
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 import 'package:frontend/constants/strings.dart';
-import 'package:frontend/screens/restaurants_search_screen.dart';
 //TODO: add caching to restraunts.
 
 final ProductsWebServices productsWebServices =
