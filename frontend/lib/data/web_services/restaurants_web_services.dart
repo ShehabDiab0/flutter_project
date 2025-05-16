@@ -19,7 +19,7 @@ class RestaurantsWebServices {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          final accessToken = await tokenManager.getAccessToken();
+          final accessToken = await tokenManager.getValidAccessToken();
           if (accessToken != null) {
             options.headers['Authorization'] = 'Bearer $accessToken';
           }
