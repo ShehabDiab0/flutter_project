@@ -1,652 +1,782 @@
 [
-    {
-      "model": "products.product",
-      "pk": 1,
-      "fields": {
-        "restaurant": 1,
-        "name": "Espresso",
-        "description": "Double shot espresso made from premium beans.",
-        "price": "2.99",
-        "image_url": "",
-        "category": "Coffee",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 2,
-      "fields": {
-        "restaurant": 1,
-        "name": "Cappuccino",
-        "description": "Classic cappuccino topped with foam.",
-        "price": "3.49",
-        "image_url": "",
-        "category": "Coffee",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 3,
-      "fields": {
-        "restaurant": 1,
-        "name": "Blueberry Muffin",
-        "description": "Freshly baked muffin with real blueberries.",
-        "price": "2.75",
-        "image_url": "",
-        "category": "Pastry",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 4,
-      "fields": {
-        "restaurant": 2,
-        "name": "Cheeseburger",
-        "description": "Juicy beef patty with cheddar cheese and lettuce.",
-        "price": "8.99",
-        "image_url": "",
-        "category": "Burgers",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 5,
-      "fields": {
-        "restaurant": 2,
-        "name": "Onion Rings",
-        "description": "Crispy battered onion rings served with dipping sauce.",
-        "price": "3.99",
-        "image_url": "",
-        "category": "Sides",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 6,
-      "fields": {
-        "restaurant": 3,
-        "name": "Spaghetti Carbonara",
-        "description": "Creamy pasta with pancetta, egg yolk, and Parmesan.",
-        "price": "12.50",
-        "image_url": "",
-        "category": "Pasta",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 7,
-      "fields": {
-        "restaurant": 3,
-        "name": "Lasagna",
-        "description": "Layered meat and cheese lasagna with tomato sauce.",
-        "price": "14.00",
-        "image_url": "",
-        "category": "Pasta",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 8,
-      "fields": {
-        "restaurant": 4,
-        "name": "California Roll",
-        "description": "Classic sushi roll with crab, avocado, and cucumber.",
-        "price": "6.50",
-        "image_url": "",
-        "category": "Sushi",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 9,
-      "fields": {
-        "restaurant": 4,
-        "name": "Salmon Nigiri",
-        "description": "Fresh salmon slices over seasoned rice.",
-        "price": "5.00",
-        "image_url": "",
-        "category": "Sushi",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 10,
-      "fields": {
-        "restaurant": 5,
-        "name": "Chicken Taco",
-        "description": "Soft corn tortilla filled with grilled chicken and salsa.",
-        "price": "2.50",
-        "image_url": "",
-        "category": "Tacos",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 11,
-      "fields": {
-        "restaurant": 5,
-        "name": "Guacamole",
-        "description": "Fresh guac made daily with ripe avocados.",
-        "price": "4.99",
-        "image_url": "",
-        "category": "Appetizers",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 12,
-      "fields": {
-        "restaurant": 6,
-        "name": "Pepperoni Pizza",
-        "description": "Classic pepperoni pizza with mozzarella cheese.",
-        "price": "10.99",
-        "image_url": "",
-        "category": "Pizza",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 13,
-      "fields": {
-        "restaurant": 6,
-        "name": "Garlic Bread",
-        "description": "Toasted bread with garlic butter and herbs.",
-        "price": "3.50",
-        "image_url": "",
-        "category": "Appetizers",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 14,
-      "fields": {
-        "restaurant": 7,
-        "name": "Chocolate Cake",
-        "description": "Rich chocolate cake with vanilla frosting.",
-        "price": "4.00",
-        "image_url": "",
-        "category": "Desserts",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 15,
-      "fields": {
-        "restaurant": 7,
-        "name": "Strawberry Cheesecake",
-        "description": "Creamy cheesecake with fresh strawberry topping.",
-        "price": "5.50",
-        "image_url": "",
-        "category": "Desserts",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 16,
-      "fields": {
-        "restaurant": 8,
-        "name": "BBQ Ribs",
-        "description": "Fall-off-the-bone ribs smothered in BBQ sauce.",
-        "price": "15.99",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 17,
-      "fields": {
-        "restaurant": 8,
-        "name": "Cornbread",
-        "description": "Traditional Southern-style cornbread.",
-        "price": "2.25",
-        "image_url": "",
-        "category": "Sides",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 18,
-      "fields": {
-        "restaurant": 9,
-        "name": "Quinoa Salad",
-        "description": "Healthy quinoa salad with mixed veggies and lemon dressing.",
-        "price": "9.99",
-        "image_url": "",
-        "category": "Salads",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 19,
-      "fields": {
-        "restaurant": 9,
-        "name": "Vegan Burger",
-        "description": "Plant-based burger with vegan cheese and avocado spread.",
-        "price": "11.50",
-        "image_url": "",
-        "category": "Burgers",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 20,
-      "fields": {
-        "restaurant": 10,
-        "name": "Ribeye Steak",
-        "description": "Grilled ribeye steak with rosemary butter.",
-        "price": "22.99",
-        "image_url": "",
-        "category": "Steak",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 21,
-      "fields": {
-        "restaurant": 10,
-        "name": "Red Wine",
-        "description": "Glass of selected red wine from local vineyards.",
-        "price": "8.00",
-        "image_url": "",
-        "category": "Drinks",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 22,
-      "fields": {
-        "restaurant": 11,
-        "name": "Butter Chicken",
-        "description": "Tender chicken simmered in creamy tomato sauce.",
-        "price": "13.99",
-        "image_url": "",
-        "category": "Curries",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 23,
-      "fields": {
-        "restaurant": 11,
-        "name": "Naan Bread",
-        "description": "Freshly baked naan brushed with garlic butter.",
-        "price": "2.50",
-        "image_url": "",
-        "category": "Bread",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 24,
-      "fields": {
-        "restaurant": 12,
-        "name": "Hummus Plate",
-        "description": "Hummus served with olives, pickles, and warm pita.",
-        "price": "7.99",
-        "image_url": "",
-        "category": "Appetizers",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 25,
-      "fields": {
-        "restaurant": 12,
-        "name": "Grilled Chicken Shawarma",
-        "description": "Marinated chicken wrapped in flatbread with tahini sauce.",
-        "price": "9.50",
-        "image_url": "",
-        "category": "Wraps",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 26,
-      "fields": {
-        "restaurant": 13,
-        "name": "Kung Pao Chicken",
-        "description": "Stir-fried chicken with chili peppers and peanuts.",
-        "price": "11.99",
-        "image_url": "",
-        "category": "Chinese",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 27,
-      "fields": {
-        "restaurant": 13,
-        "name": "Wonton Soup",
-        "description": "Clear broth with pork-filled wontons.",
-        "price": "4.50",
-        "image_url": "",
-        "category": "Soups",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 28,
-      "fields": {
-        "restaurant": 14,
-        "name": "Coq au Vin",
-        "description": "French dish of chicken cooked in red wine.",
-        "price": "16.50",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 29,
-      "fields": {
-        "restaurant": 14,
-        "name": "Croissant",
-        "description": "Flaky buttery croissant served warm.",
-        "price": "3.00",
-        "image_url": "",
-        "category": "Pastries",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 30,
-      "fields": {
-        "restaurant": 15,
-        "name": "Pad Thai",
-        "description": "Stir-fried noodles with shrimp, bean sprouts, and lime.",
-        "price": "10.99",
-        "image_url": "",
-        "category": "Noodles",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 31,
-      "fields": {
-        "restaurant": 15,
-        "name": "Tom Kha Gai",
-        "description": "Thai coconut soup with chicken and mushrooms.",
-        "price": "6.50",
-        "image_url": "",
-        "category": "Soups",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 32,
-      "fields": {
-        "restaurant": 16,
-        "name": "Greek Salad",
-        "description": "Tomatoes, cucumbers, feta, and olives with olive oil.",
-        "price": "8.99",
-        "image_url": "",
-        "category": "Salads",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 33,
-      "fields": {
-        "restaurant": 16,
-        "name": "Gyro Wrap",
-        "description": "Lamb gyro meat wrapped in pita with tzatziki.",
-        "price": "9.50",
-        "image_url": "",
-        "category": "Wraps",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 34,
-      "fields": {
-        "restaurant": 17,
-        "name": "Bibimbap",
-        "description": "Mixed rice bowl with vegetables and bulgogi beef.",
-        "price": "12.00",
-        "image_url": "",
-        "category": "Rice Bowls",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 35,
-      "fields": {
-        "restaurant": 17,
-        "name": "Kimchi",
-        "description": "Traditional Korean fermented cabbage side dish.",
-        "price": "3.00",
-        "image_url": "",
-        "category": "Side Dishes",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 36,
-      "fields": {
-        "restaurant": 18,
-        "name": "Patatas Bravas",
-        "description": "Spanish fried potatoes with spicy bravas sauce.",
-        "price": "5.50",
-        "image_url": "",
-        "category": "Tapas",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 37,
-      "fields": {
-        "restaurant": 18,
-        "name": "Paella",
-        "description": "Seafood paella with saffron rice and shellfish.",
-        "price": "18.99",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 38,
-      "fields": {
-        "restaurant": 19,
-        "name": "Picanha",
-        "description": "Brazilian grilled beef sirloin skewer.",
-        "price": "19.99",
-        "image_url": "",
-        "category": "Grill",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 39,
-      "fields": {
-        "restaurant": 19,
-        "name": "Caipirinha",
-        "description": "Traditional Brazilian cocktail with cachaça and lime.",
-        "price": "8.50",
-        "image_url": "",
-        "category": "Drinks",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 40,
-      "fields": {
-        "restaurant": 20,
-        "name": "Pho",
-        "description": "Vietnamese noodle soup with beef broth and herbs.",
-        "price": "9.99",
-        "image_url": "",
-        "category": "Soups",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 41,
-      "fields": {
-        "restaurant": 20,
-        "name": "Banh Mi",
-        "description": "Vietnamese sandwich with grilled pork and pickled veggies.",
-        "price": "6.99",
-        "image_url": "",
-        "category": "Sandwiches",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 42,
-      "fields": {
-        "restaurant": 21,
-        "name": "Shish Tawook",
-        "description": "Grilled chicken skewers with garlic sauce.",
-        "price": "11.99",
-        "image_url": "",
-        "category": "Grill",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 43,
-      "fields": {
-        "restaurant": 21,
-        "name": "Fattoush Salad",
-        "description": "Middle Eastern salad with crispy pita and sumac dressing.",
-        "price": "7.99",
-        "image_url": "",
-        "category": "Salads",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 44,
-      "fields": {
-        "restaurant": 22,
-        "name": "Fried Chicken",
-        "description": "Southern-style fried chicken with mashed potatoes.",
-        "price": "13.99",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 45,
-      "fields": {
-        "restaurant": 22,
-        "name": "Mac and Cheese",
-        "description": "Cheesy baked macaroni and cheese.",
-        "price": "4.50",
-        "image_url": "",
-        "category": "Sides",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 46,
-      "fields": {
-        "restaurant": 23,
-        "name": "Jambalaya",
-        "description": "Creole dish with rice, sausage, and seafood.",
-        "price": "14.99",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 47,
-      "fields": {
-        "restaurant": 23,
-        "name": "Beignets",
-        "description": "Deep-fried dough dusted with powdered sugar.",
-        "price": "3.99",
-        "image_url": "",
-        "category": "Desserts",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 48,
-      "fields": {
-        "restaurant": 24,
-        "name": "Shepherd's Pie",
-        "description": "Ground lamb and vegetable pie topped with mashed potatoes.",
-        "price": "12.99",
-        "image_url": "",
-        "category": "Entrees",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 49,
-      "fields": {
-        "restaurant": 24,
-        "name": "Irish Coffee",
-        "description": "Hot coffee with Irish whiskey and whipped cream.",
-        "price": "6.50",
-        "image_url": "",
-        "category": "Drinks",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "products.product",
-      "pk": 50,
-      "fields": {
-        "restaurant": 25,
-        "name": "Borscht",
-        "description": "Traditional Russian beet soup with sour cream.",
-        "price": "5.99",
-        "image_url": "",
-        "category": "Soups",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "restaurant": 1,
+      "name": "Espresso",
+      "description": "Double shot espresso made from premium beans.",
+      "price": "2.99",
+      "image_url": "",
+      "category": "Coffee",
+      "created_at": "2025-04-05T10:00:00Z"
     }
-  ]
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "restaurant": 1,
+      "name": "Cappuccino",
+      "description": "Classic cappuccino topped with foam.",
+      "price": "3.49",
+      "image_url": "",
+      "category": "Coffee",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "restaurant": 1,
+      "name": "Blueberry Muffin",
+      "description": "Freshly baked muffin with real blueberries.",
+      "price": "2.75",
+      "image_url": "",
+      "category": "Pastry",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "restaurant": 2,
+      "name": "Cheeseburger",
+      "description": "Juicy beef patty with cheddar cheese and lettuce.",
+      "price": "8.99",
+      "image_url": "",
+      "category": "Burgers",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "restaurant": 2,
+      "name": "Onion Rings",
+      "description": "Crispy battered onion rings served with dipping sauce.",
+      "price": "3.99",
+      "image_url": "",
+      "category": "Sides",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "restaurant": 3,
+      "name": "Spaghetti Carbonara",
+      "description": "Creamy pasta with pancetta, egg yolk, and Parmesan.",
+      "price": "12.50",
+      "image_url": "",
+      "category": "Pasta",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "restaurant": 3,
+      "name": "Lasagna",
+      "description": "Layered meat and cheese lasagna with tomato sauce.",
+      "price": "14.00",
+      "image_url": "",
+      "category": "Pasta",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "restaurant": 4,
+      "name": "California Roll",
+      "description": "Classic sushi roll with crab, avocado, and cucumber.",
+      "price": "6.50",
+      "image_url": "",
+      "category": "Sushi",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "restaurant": 4,
+      "name": "Salmon Nigiri",
+      "description": "Fresh salmon slices over seasoned rice.",
+      "price": "5.00",
+      "image_url": "",
+      "category": "Sushi",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "restaurant": 5,
+      "name": "Chicken Taco",
+      "description": "Soft corn tortilla filled with grilled chicken and salsa.",
+      "price": "2.50",
+      "image_url": "",
+      "category": "Tacos",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "restaurant": 5,
+      "name": "Guacamole",
+      "description": "Fresh guac made daily with ripe avocados.",
+      "price": "4.99",
+      "image_url": "",
+      "category": "Appetizers",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "restaurant": 6,
+      "name": "Pepperoni Pizza",
+      "description": "Classic pepperoni pizza with mozzarella cheese.",
+      "price": "10.99",
+      "image_url": "",
+      "category": "Pizza",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "restaurant": 6,
+      "name": "Garlic Bread",
+      "description": "Toasted bread with garlic butter and herbs.",
+      "price": "3.50",
+      "image_url": "",
+      "category": "Appetizers",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "restaurant": 7,
+      "name": "Chocolate Cake",
+      "description": "Rich chocolate cake with vanilla frosting.",
+      "price": "4.00",
+      "image_url": "",
+      "category": "Desserts",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "restaurant": 7,
+      "name": "Strawberry Cheesecake",
+      "description": "Creamy cheesecake with fresh strawberry topping.",
+      "price": "5.50",
+      "image_url": "",
+      "category": "Desserts",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "restaurant": 8,
+      "name": "BBQ Ribs",
+      "description": "Fall-off-the-bone ribs smothered in BBQ sauce.",
+      "price": "15.99",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "restaurant": 8,
+      "name": "Cornbread",
+      "description": "Traditional Southern-style cornbread.",
+      "price": "2.25",
+      "image_url": "",
+      "category": "Sides",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "restaurant": 9,
+      "name": "Quinoa Salad",
+      "description": "Healthy quinoa salad with mixed veggies and lemon dressing.",
+      "price": "9.99",
+      "image_url": "",
+      "category": "Salads",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "restaurant": 9,
+      "name": "Vegan Burger",
+      "description": "Plant-based burger with vegan cheese and avocado spread.",
+      "price": "11.50",
+      "image_url": "",
+      "category": "Burgers",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "restaurant": 10,
+      "name": "Ribeye Steak",
+      "description": "Grilled ribeye steak with rosemary butter.",
+      "price": "22.99",
+      "image_url": "",
+      "category": "Steak",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+      "restaurant": 10,
+      "name": "Red Wine",
+      "description": "Glass of selected red wine from local vineyards.",
+      "price": "8.00",
+      "image_url": "",
+      "category": "Drinks",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+      "restaurant": 11,
+      "name": "Butter Chicken",
+      "description": "Tender chicken simmered in creamy tomato sauce.",
+      "price": "13.99",
+      "image_url": "",
+      "category": "Curries",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+      "restaurant": 11,
+      "name": "Naan Bread",
+      "description": "Freshly baked naan brushed with garlic butter.",
+      "price": "2.50",
+      "image_url": "",
+      "category": "Bread",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+      "restaurant": 12,
+      "name": "Hummus Plate",
+      "description": "Hummus served with olives, pickles, and warm pita.",
+      "price": "7.99",
+      "image_url": "",
+      "category": "Appetizers",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+      "restaurant": 12,
+      "name": "Grilled Chicken Shawarma",
+      "description": "Marinated chicken wrapped in flatbread with tahini sauce.",
+      "price": "9.50",
+      "image_url": "",
+      "category": "Wraps",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 26,
+    "fields": {
+      "restaurant": 13,
+      "name": "Kung Pao Chicken",
+      "description": "Stir-fried chicken with chili peppers and peanuts.",
+      "price": "11.99",
+      "image_url": "",
+      "category": "Chinese",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 27,
+    "fields": {
+      "restaurant": 13,
+      "name": "Wonton Soup",
+      "description": "Clear broth with pork-filled wontons.",
+      "price": "4.50",
+      "image_url": "",
+      "category": "Soups",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 28,
+    "fields": {
+      "restaurant": 14,
+      "name": "Coq au Vin",
+      "description": "French dish of chicken cooked in red wine.",
+      "price": "16.50",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 29,
+    "fields": {
+      "restaurant": 14,
+      "name": "Croissant",
+      "description": "Flaky buttery croissant served warm.",
+      "price": "3.00",
+      "image_url": "",
+      "category": "Pastries",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 30,
+    "fields": {
+      "restaurant": 15,
+      "name": "Pad Thai",
+      "description": "Stir-fried noodles with shrimp, bean sprouts, and lime.",
+      "price": "10.99",
+      "image_url": "",
+      "category": "Noodles",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 31,
+    "fields": {
+      "restaurant": 15,
+      "name": "Tom Kha Gai",
+      "description": "Thai coconut soup with chicken and mushrooms.",
+      "price": "6.50",
+      "image_url": "",
+      "category": "Soups",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 32,
+    "fields": {
+      "restaurant": 16,
+      "name": "Greek Salad",
+      "description": "Tomatoes, cucumbers, feta, and olives with olive oil.",
+      "price": "8.99",
+      "image_url": "",
+      "category": "Salads",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 33,
+    "fields": {
+      "restaurant": 16,
+      "name": "Gyro Wrap",
+      "description": "Lamb gyro meat wrapped in pita with tzatziki.",
+      "price": "9.50",
+      "image_url": "",
+      "category": "Wraps",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 34,
+    "fields": {
+      "restaurant": 17,
+      "name": "Bibimbap",
+      "description": "Mixed rice bowl with vegetables and bulgogi beef.",
+      "price": "12.00",
+      "image_url": "",
+      "category": "Rice Bowls",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 35,
+    "fields": {
+      "restaurant": 17,
+      "name": "Kimchi",
+      "description": "Traditional Korean fermented cabbage side dish.",
+      "price": "3.00",
+      "image_url": "",
+      "category": "Side Dishes",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 36,
+    "fields": {
+      "restaurant": 18,
+      "name": "Patatas Bravas",
+      "description": "Spanish fried potatoes with spicy bravas sauce.",
+      "price": "5.50",
+      "image_url": "",
+      "category": "Tapas",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 37,
+    "fields": {
+      "restaurant": 18,
+      "name": "Paella",
+      "description": "Seafood paella with saffron rice and shellfish.",
+      "price": "18.99",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 38,
+    "fields": {
+      "restaurant": 19,
+      "name": "Picanha",
+      "description": "Brazilian grilled beef sirloin skewer.",
+      "price": "19.99",
+      "image_url": "",
+      "category": "Grill",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 39,
+    "fields": {
+      "restaurant": 19,
+      "name": "Caipirinha",
+      "description": "Traditional Brazilian cocktail with cachaça and lime.",
+      "price": "8.50",
+      "image_url": "",
+      "category": "Drinks",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 40,
+    "fields": {
+      "restaurant": 20,
+      "name": "Pho",
+      "description": "Vietnamese noodle soup with beef broth and herbs.",
+      "price": "9.99",
+      "image_url": "",
+      "category": "Soups",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 41,
+    "fields": {
+      "restaurant": 20,
+      "name": "Banh Mi",
+      "description": "Vietnamese sandwich with grilled pork and pickled veggies.",
+      "price": "6.99",
+      "image_url": "",
+      "category": "Sandwiches",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 42,
+    "fields": {
+      "restaurant": 21,
+      "name": "Shish Tawook",
+      "description": "Grilled chicken skewers with garlic sauce.",
+      "price": "11.99",
+      "image_url": "",
+      "category": "Grill",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 43,
+    "fields": {
+      "restaurant": 21,
+      "name": "Fattoush Salad",
+      "description": "Middle Eastern salad with crispy pita and sumac dressing.",
+      "price": "7.99",
+      "image_url": "",
+      "category": "Salads",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 44,
+    "fields": {
+      "restaurant": 22,
+      "name": "Fried Chicken",
+      "description": "Southern-style fried chicken with mashed potatoes.",
+      "price": "13.99",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 45,
+    "fields": {
+      "restaurant": 22,
+      "name": "Mac and Cheese",
+      "description": "Cheesy baked macaroni and cheese.",
+      "price": "4.50",
+      "image_url": "",
+      "category": "Sides",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 46,
+    "fields": {
+      "restaurant": 23,
+      "name": "Jambalaya",
+      "description": "Creole dish with rice, sausage, and seafood.",
+      "price": "14.99",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 47,
+    "fields": {
+      "restaurant": 23,
+      "name": "Beignets",
+      "description": "Deep-fried dough dusted with powdered sugar.",
+      "price": "3.99",
+      "image_url": "",
+      "category": "Desserts",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 48,
+    "fields": {
+      "restaurant": 24,
+      "name": "Shepherd's Pie",
+      "description": "Ground lamb and vegetable pie topped with mashed potatoes.",
+      "price": "12.99",
+      "image_url": "",
+      "category": "Entrees",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 49,
+    "fields": {
+      "restaurant": 24,
+      "name": "Irish Coffee",
+      "description": "Hot coffee with Irish whiskey and whipped cream.",
+      "price": "6.50",
+      "image_url": "",
+      "category": "Drinks",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 50,
+    "fields": {
+      "restaurant": 25,
+      "name": "Borscht",
+      "description": "Traditional Russian beet soup with sour cream.",
+      "price": "5.99",
+      "image_url": "",
+      "category": "Soups",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 51,
+    "fields": {
+      "restaurant": 26,
+      "name": "Mixed Grill Platter",
+      "description": "A selection of grilled meats served with traditional sides.",
+      "price": "15.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 52,
+    "fields": {
+      "restaurant": 26,
+      "name": "Meze Selection",
+      "description": "An assortment of traditional Egyptian appetizers.",
+      "price": "8.99",
+      "image_url": "",
+      "category": "Appetizer",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 53,
+    "fields": {
+      "restaurant": 27,
+      "name": "Baba Ghanoush",
+      "description": "Smoky eggplant dip blended with tahini and spices.",
+      "price": "4.99",
+      "image_url": "",
+      "category": "Appetizer",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 54,
+    "fields": {
+      "restaurant": 27,
+      "name": "Stuffed Pigeon",
+      "description": "Traditional dish of pigeon stuffed with seasoned rice.",
+      "price": "12.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 55,
+    "fields": {
+      "restaurant": 28,
+      "name": "Koshary Bowl",
+      "description": "A hearty mix of rice, pasta, lentils, and crispy onions topped with tomato sauce.",
+      "price": "3.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 56,
+    "fields": {
+      "restaurant": 28,
+      "name": "Spicy Koshary",
+      "description": "Traditional koshary with a spicy twist.",
+      "price": "4.49",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 57,
+    "fields": {
+      "restaurant": 29,
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with fresh tomatoes, mozzarella, and basil.",
+      "price": "9.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 58,
+    "fields": {
+      "restaurant": 29,
+      "name": "Fettuccine Alfredo",
+      "description": "Creamy pasta dish with parmesan and butter sauce.",
+      "price": "10.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 59,
+    "fields": {
+      "restaurant": 30,
+      "name": "Molokhia",
+      "description": "Traditional Egyptian green soup made from jute leaves.",
+      "price": "6.99",
+      "image_url": "",
+      "category": "Soup",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 60,
+    "fields": {
+      "restaurant": 30,
+      "name": "Grilled Lamb Chops",
+      "description": "Tender lamb chops grilled to perfection with local spices.",
+      "price": "14.99",
+      "image_url": "",
+      "category": "Main Course",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  }
+]

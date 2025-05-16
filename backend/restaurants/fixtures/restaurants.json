@@ -1,30 +1,30 @@
 [
-    {
-      "model": "restaurants.restaurant",
-      "pk": 1,
-      "fields": {
-        "name": "Cafe Central",
-        "address": "123 Main St, New York",
-        "latitude": 40.7128,
-        "longitude": -74.0060,
-        "description": "A cozy place with great coffee",
-        "image_url": "",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
-    {
-      "model": "restaurants.restaurant",
-      "pk": 2,
-      "fields": {
-        "name": "Burger Hub",
-        "address": "456 Oak Ave, Chicago",
-        "latitude": 41.8781,
-        "longitude": -87.6298,
-        "description": "Best burgers in town",
-        "image_url": "",
-        "created_at": "2025-04-05T10:00:00Z"
-      }
-    },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 1,
+    "fields": {
+      "name": "Cafe Central",
+      "address": "123 Main St, New York",
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "description": "A cozy place with great coffee",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 2,
+    "fields": {
+      "name": "Burger Hub",
+      "address": "456 Oak Ave, Chicago",
+      "latitude": 41.8781,
+      "longitude": -87.6298,
+      "description": "Best burgers in town",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
   {
     "model": "restaurants.restaurant",
     "pk": 3,
@@ -320,6 +320,71 @@
       "latitude": 47.6062,
       "longitude": -122.3321,
       "description": "Authentic Russian cuisine",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 26,
+    "fields": {
+      "name": "9 Pyramids Lounge",
+      "address": "Nazlet El-Semman, Giza",
+      "latitude": 29.9765,
+      "longitude": 31.1313,
+      "description": "Offers panoramic views of the pyramids with traditional Egyptian cuisine.",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 27,
+    "fields": {
+      "name": "Khufu's Restaurant",
+      "address": "Nazlet El-Semman, Giza",
+      "latitude": 29.9760,
+      "longitude": 31.1320,
+      "description": "Known for its authentic Egyptian dishes and proximity to the Great Sphinx.",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 28,
+    "fields": {
+      "name": "Koshary Hekaya",
+      "address": "64 Abou El Houl El Seyahy St., Giza",
+      "latitude": 29.9755,
+      "longitude": 31.1330,
+      "description": "A local favorite specializing in traditional koshary.",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 29,
+    "fields": {
+      "name": "IL Dome Italian Lounge",
+      "address": "15 Sadat Street, Giza",
+      "latitude": 29.9768,
+      "longitude": 31.1305,
+      "description": "Offers a blend of Italian and Mediterranean cuisines in a cozy setting.",
+      "image_url": "",
+      "created_at": "2025-04-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 30,
+    "fields": {
+      "name": "139 Restaurant",
+      "address": "Marriott Mena House Hotel, 6 Pyramids Road, Giza",
+      "latitude": 29.9762,
+      "longitude": 31.1315,
+      "description": "Features international and Egyptian fusion dishes with pyramid views.",
       "image_url": "",
       "created_at": "2025-04-05T10:00:00Z"
     }
