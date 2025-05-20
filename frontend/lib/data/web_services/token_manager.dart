@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -42,6 +43,7 @@ class TokenManager {
     final refreshToken = await getRefreshToken();
     if (refreshToken != null) {
       final newAccessToken = await refreshAccessToken(refreshToken);
+      print('New access token: $newAccessToken');
       if (newAccessToken != null) {
         await saveAccessToken(newAccessToken);
         return newAccessToken;
@@ -68,18 +70,27 @@ class TokenManager {
 
   // Helper method to refresh the access token
   Future<String?> refreshAccessToken(String refreshToken) async {
-    try {
-      final response = await http.post(
-        Uri.parse(
-          'https://$baseURL/token/refresh',
-        ), // Replace with your API endpoint
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({'refresh_token': refreshToken}),
-      );
+    print('Refreshing access token...');
+    BaseOptions options = BaseOptions(
+      baseUrl: baseURL,
+      receiveDataWhenStatusError: true,
+      connectTimeout: Duration(seconds: 60),
+      receiveTimeout: Duration(seconds: 60),
+    );
 
+    final _dio = Dio(options);
+
+    try {
+      final response = await _dio.post(
+        'accounts/login/refresh/', // Endpoint path, baseUrl is already set
+        data: json.encode({'refresh': refreshToken}),
+      );
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        return data['access_token'];
+        final data =
+            response.data is String
+                ? json.decode(response.data)
+                : response.data;
+        return data['access'];
       }
     } catch (e) {
       // Handle errors (e.g., log them)
